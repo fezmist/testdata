@@ -1,0 +1,6 @@
+[mono-centos6-stable]
+name=mono-centos6-stable
+baseurl=file://app/data/mono-packages
+enabled=1
+gpgcheck=1
+gpgkey=file://app/data/mono-packages/repodata/xamarin.gpg
