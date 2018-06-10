@@ -1,0 +1,7 @@
+[mono-5.12]
+name=mono-5.12
+baseurl=file:///apps/mono/packages/mono-5.12/
+enabled=1
+gpgcheck=0
+gpgkey=file:///apps/mono/packages/mono-5.12/xamarin.gpg
+
