@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE comps PUBLIC "-//Red Hat, Inc.//DTD Comps info//EN" "comps.dtd">
+<comps>
+        
+  <group>
+   <id>mono-5.12</id>
+   <default>false</default>
+   <uservisible>true</uservisible>
+   <display_order>1024</display_order>
+   <name>mono-5.12</name>
+   <description>Group of packages required to install mono 5.12</description>
+    <packagelist>
+      <packagereq type="default">ibm-data-db2</packagereq>
+      <packagereq type="default">libgdiplus-devel</packagereq>
+      <packagereq type="default">libgdiplus0</packagereq>
+      <packagereq type="default">libmono-2_0-1</packagereq>
+      <packagereq type="default">libmono-2_0-devel</packagereq>
+      <packagereq type="default">libmonoboehm-2_0-1</packagereq>
+      <packagereq type="default">libmonoboehm-2_0-devel</packagereq>
+      <packagereq type="default">libmonosgen-2_0-1</packagereq>
+      <packagereq type="default">libmonosgen-2_0-devel</packagereq>
+      <packagereq type="default">mono-complete</packagereq>
+      <packagereq type="default">mono-core</packagereq>
+      <packagereq type="default">mono-data</packagereq>
+      <packagereq type="default">mono-data-oracle</packagereq>
+      <packagereq type="default">mono-data-sqlite</packagereq>
+      <packagereq type="default">mono-devel</packagereq>
+      <packagereq type="default">mono-extras</packagereq>
+      <packagereq type="default">mono-locale-extras</packagereq>
+      <packagereq type="default">mono-mvc</packagereq>
+      <packagereq type="default">mono-nunit</packagereq>
+    </packagelist>
+  </group>
+</comps>
