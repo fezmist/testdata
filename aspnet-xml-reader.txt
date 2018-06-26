@@ -1,0 +1,49 @@
+C# code to read xml:
+IEnumerable<Target> targets = null;
+            try
+            {
+                string targetXmlFile = Server.MapPath("./targets.xml");
+                targets = XDocument.Load(targetXmlFile).Element("Targets")
+                    .Descendants("Target")
+                    .Select(t => new Target()
+                    {
+                        Name = t.Element("Name").Value == null ? "" : t.Element("Name").Value,
+                        Description = t.Element("Description").Value == null ? "" : t.Element("Description").Value,
+                        TargetUrl = t.Element("TargetUrl").Value == null ? "" : t.Element("TargetUrl").Value,
+                        Enabled = t.Element("Enabled").Value == null ? false : Convert.ToBoolean(t.Element("Enabled").Value)
+                    });
+                
+            }
+            catch (Exception ex)
+            {
+                ViewBag.errorMessage = ex.Message + Environment.NewLine + ex.StackTrace.ToString();
+            }
+
+            return View(targets)
+targets.xml
+<Targets>
+  <Target>
+    <Name>Tradeflow Ops Manager - DEV</Name>
+    <Description>Tradeflow Ops Manager Web Application</Description>
+    <TargetUrl>http://XXXXXX/OpsManager_1_1_0/do/welcome</TargetUrl>
+    <Enabled>true</Enabled>
+  </Target>
+  <Target>
+    <Name>Tradeflow Design Studio - DEV</Name>
+    <Description>Tradeflow Design Studio Web Application</Description>
+    <TargetUrl>http://XXXXXXX/DesignStudio_1_1_0/do/welcome</TargetUrl>
+    <Enabled>true</Enabled>
+  </Target>
+</Targets>
+
+Target.cs
+    public class Target
+    {
+        public string Name { get; set; }
+
+        public string Description { get; set; }
+
+        public string TargetUrl { get; set; }
+
+        public bool Enabled { get; set; }
+    }
